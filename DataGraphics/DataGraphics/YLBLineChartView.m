@@ -138,21 +138,22 @@ CGFloat fontSize = 12.0f;
     [bezierPath addLineToPoint:CGPointMake(self.frame.size.width, self.frame.size.height)];
 
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-//    shapeLayer.geometryFlipped = YES;
-    shapeLayer.transform = CATransform3DTranslate(shapeLayer.transform, 0, 0, 1);
     shapeLayer.lineWidth = 0.5f;
     shapeLayer.strokeColor = [UIColor redColor].CGColor;
     shapeLayer.fillColor = [UIColor colorWithRed:225/255.0f green:237/255.0f blue:251/255.0f alpha:0.2].CGColor;
     shapeLayer.path = bezierPath.CGPath;
     [self.layer addSublayer:shapeLayer];
     
+    shapeLayer.anchorPoint = CGPointMake(1, 1);
+    shapeLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     
-//    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
-//    animation.fromValue = @0;
-//    animation.toValue = @1;
-//    animation.duration = 2.0f;
-//    
-//    [shapeLayer addAnimation:animation forKey:@"strokeEnd"];
+    CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
+    basicAnimation.fromValue = @0.0f;
+    basicAnimation.toValue = @1.0f;
+    basicAnimation.duration = 2.0f;
+    basicAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    
+    [shapeLayer addAnimation:basicAnimation forKey:@"scale.y"];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -224,6 +225,8 @@ CGFloat fontSize = 12.0f;
     if (self.lineView.superview == nil) {
         [self addSubview:self.lineView];
     }
+    
+    NSLog(@"%f", value);
 }
 
 @end
