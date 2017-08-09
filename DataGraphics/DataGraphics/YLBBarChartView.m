@@ -109,15 +109,14 @@
     shapeLayer.path = path.CGPath;
     
     shapeLayer.lineWidth = self.barWidth;
-//    shapeLayer.lineWidth = 2.0f;
     shapeLayer.strokeColor = bgColor.CGColor;
     shapeLayer.fillColor = bgColor.CGColor;
     
     [self.layer addSublayer:shapeLayer];
     
     CABasicAnimation *pathAnima = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-//    pathAnima.duration = 1.0f;
-    pathAnima.duration = 3.0f * (height / self.maxNum);
+    pathAnima.duration = 1.0f;
+//    pathAnima.duration = 3.0f * (height / self.maxNum);
     pathAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     pathAnima.fromValue = [NSNumber numberWithFloat:0.0f];
     pathAnima.toValue = [NSNumber numberWithFloat:1.0f];

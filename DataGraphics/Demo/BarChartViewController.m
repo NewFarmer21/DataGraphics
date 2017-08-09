@@ -48,7 +48,7 @@
     [models addObject:model4];
     
     YLBBarChartView *barGraphView =
-    [[YLBBarChartView alloc] initWithFrame:CGRectMake(10, 100, self.view.frame.size.width - 20.0f, 400)
+    [[YLBBarChartView alloc] initWithFrame:CGRectMake(10, 100, self.view.frame.size.width - 20.0f, 200)
                                     models:models
                                   maxValue:500.0f];
     

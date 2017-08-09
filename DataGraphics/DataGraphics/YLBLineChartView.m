@@ -96,7 +96,7 @@ CGFloat fontSize = 12.0f;
         // 添加标尺线
         CGFloat lineY = i * (self.frame.size.height / 4);
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, lineY, self.frame.size.width, 0.5)];
-        lineView.backgroundColor = [UIColor lightGrayColor];
+        lineView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:0.5f];
         [self addSubview:lineView];
         
         // 添加左侧Label
