@@ -116,7 +116,6 @@
     
     CABasicAnimation *pathAnima = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     pathAnima.duration = 1.0f;
-//    pathAnima.duration = 3.0f * (height / self.maxNum);
     pathAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     pathAnima.fromValue = [NSNumber numberWithFloat:0.0f];
     pathAnima.toValue = [NSNumber numberWithFloat:1.0f];

@@ -24,31 +24,27 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    NSMutableArray *models = [NSMutableArray array];
-    YLBChartModel *model1 = [[YLBChartModel alloc] initWithValue:[self arc4randomNumber]
-                                                           color:[UIColor srand_color]];
-    [models addObject:model1];
-    
-    YLBChartModel *model2 = [[YLBChartModel alloc] initWithValue:[self arc4randomNumber]
-                                                           color:[UIColor srand_color]];
-    [models addObject:model2];
-    
-    YLBChartModel *model3 = [[YLBChartModel alloc] initWithValue:[self arc4randomNumber]
-                                                           color:[UIColor srand_color]];
-    [models addObject:model3];
-    
-    YLBChartModel *model4 = [[YLBChartModel alloc] initWithValue:[self arc4randomNumber]
-                                                           color:[UIColor srand_color]];
-    [models addObject:model4];
-
-    
-    YLBPieChartView *arcView = [[YLBPieChartView alloc] initWithFrame:CGRectMake(50, 100, 300, 300) dataSource:models];
+    YLBPieChartView *arcView = [[YLBPieChartView alloc] initWithFrame:CGRectMake(50, 100, 300, 300)];
+    arcView.lineWidth = 20.0f;
+    arcView.duration = 1.0f;
     [self.view addSubview:arcView];
     
     self.arcView = arcView;
-  
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    [arcView animation];
+    NSMutableArray *models = [NSMutableArray array];
+    
+    for (int i=0; i<6; i++) {
+        [models addObject:[self arc4randomModel]];
+    }
+    
+    self.arcView.totalDesc = @"总金额(元)";
+    self.arcView.totalValue = [models valueForKeyPath:@"@sum.value.floatValue"];
+    self.arcView.dataSource = models;
+    
+    [self.arcView animation];
 }
 
 - (NSNumber *)arc4randomNumber {
@@ -58,18 +54,10 @@
     return nubmer;
 }
 
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (YLBChartModel *)arc4randomModel {
+    YLBChartModel *model = [[YLBChartModel alloc] initWithValue:[self arc4randomNumber]
+                                                           color:[UIColor srand_color]];
+    return model;
 }
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-//    [self.arcView animation];
-}
-
-
 
 @end

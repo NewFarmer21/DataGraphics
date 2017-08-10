@@ -46,6 +46,7 @@
 		FFA1767D1F347E1600F486D9 /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA1767C1F347E1600F486D9 /* PieViewController.m */; };
 		FFA1767E1F347E1600F486D9 /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA1767C1F347E1600F486D9 /* PieViewController.m */; };
 		FFA1767F1F347E1600F486D9 /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA1767C1F347E1600F486D9 /* PieViewController.m */; };
+		FFDD22DC1F3C07AE00C197AD /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD22DB1F3C07AE00C197AD /* WeakProxy.m */; };
 		FFDFB95A1F3949FB00F8B127 /* YLBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDFB9591F3949FB00F8B127 /* YLBLineChartView.m */; };
 		FFE44EF31F39573300CACB86 /* lineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE44EF21F39573300CACB86 /* lineChartViewController.m */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,8 @@
 		FFA176771F347DEA00F486D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFA1767B1F347E1600F486D9 /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieViewController.h; sourceTree = "<group>"; };
 		FFA1767C1F347E1600F486D9 /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieViewController.m; sourceTree = "<group>"; };
+		FFDD22DA1F3C07AE00C197AD /* WeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakProxy.h; sourceTree = "<group>"; };
+		FFDD22DB1F3C07AE00C197AD /* WeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakProxy.m; sourceTree = "<group>"; };
 		FFDFB9581F3949FB00F8B127 /* YLBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLBLineChartView.h; sourceTree = "<group>"; };
 		FFDFB9591F3949FB00F8B127 /* YLBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLBLineChartView.m; sourceTree = "<group>"; };
 		FFE44EF11F39573300CACB86 /* lineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lineChartViewController.h; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				FFDFB9591F3949FB00F8B127 /* YLBLineChartView.m */,
 				FFA1764A1F347DDF00F486D9 /* YLBChartModel.h */,
 				FFA1764B1F347DDF00F486D9 /* YLBChartModel.m */,
+				FFDD22DA1F3C07AE00C197AD /* WeakProxy.h */,
+				FFDD22DB1F3C07AE00C197AD /* WeakProxy.m */,
 			);
 			path = DataGraphics;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDD22DC1F3C07AE00C197AD /* WeakProxy.m in Sources */,
 				FFA176701F347DDF00F486D9 /* UIColor+SrandColor.m in Sources */,
 				FFA1766D1F347DDF00F486D9 /* DemoTableViewController.m in Sources */,
 				FFA176671F347DDF00F486D9 /* DemoObject.m in Sources */,
